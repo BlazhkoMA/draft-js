@@ -12,6 +12,7 @@
 'use strict';
 
 const CharacterMetadata = require('CharacterMetadata');
+const DraftEntity = require('DraftEntity');
 
 /**
  * Cleans up all internal caches in draft-js.
@@ -19,6 +20,7 @@ const CharacterMetadata = require('CharacterMetadata');
  */
 function cleanup() {
   CharacterMetadata.clearCharacterMetadataPool();
+  DraftEntity.resetInstanceCount();
 }
 
 module.exports = cleanup;
