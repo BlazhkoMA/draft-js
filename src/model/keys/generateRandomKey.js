@@ -16,11 +16,20 @@ const MULTIPLIER = Math.pow(2, 24);
 
 function generateRandomKey(): string {
   let key;
+
   while (key === undefined || seenKeys.hasOwnProperty(key) || !isNaN(+key)) {
     key = Math.floor(Math.random() * MULTIPLIER).toString(32);
   }
   seenKeys[key] = true;
+
   return key;
 }
 
+function clearGenerateRandomKeySeenKeys() {
+  Object.getOwnPropertyNames(seenKeys).forEach(function deleteKeys(key) {
+    delete seenKeys[key];
+  });
+}
+
 module.exports = generateRandomKey;
+module.exports.clearGenerateRandomKeySeenKeys = clearGenerateRandomKeySeenKeys;

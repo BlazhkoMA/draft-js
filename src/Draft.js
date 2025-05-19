@@ -36,6 +36,9 @@ const generateRandomKey = require('generateRandomKey');
 const getDefaultKeyBinding = require('getDefaultKeyBinding');
 const getVisibleSelectionRect = require('getVisibleSelectionRect');
 
+const clearGenerateRandomKeySeenKeys = require('generateRandomKey')
+  .clearGenerateRandomKeySeenKeys;
+
 const DraftPublic = {
   Editor: DraftEditor,
   EditorBlock: DraftEditorBlock,
@@ -66,6 +69,7 @@ const DraftPublic = {
   genKey: generateRandomKey,
   getDefaultKeyBinding,
   getVisibleSelectionRect,
+  clearGenerateRandomKeySeenKeys,
 };
 
 module.exports = DraftPublic;

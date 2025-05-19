@@ -58,6 +58,7 @@ class CharacterMetadata extends CharacterMetadataRecord {
     style: string,
   ): CharacterMetadata {
     const withStyle = record.set('style', record.getStyle().add(style));
+
     return CharacterMetadata.create(withStyle);
   }
 
@@ -66,6 +67,7 @@ class CharacterMetadata extends CharacterMetadataRecord {
     style: string,
   ): CharacterMetadata {
     const withoutStyle = record.set('style', record.getStyle().remove(style));
+
     return CharacterMetadata.create(withoutStyle);
   }
 
@@ -77,6 +79,7 @@ class CharacterMetadata extends CharacterMetadataRecord {
       record.getEntity() === entityKey
         ? record
         : record.set('entity', entityKey);
+
     return CharacterMetadata.create(withEntity);
   }
 
@@ -101,12 +104,15 @@ class CharacterMetadata extends CharacterMetadataRecord {
     const configMap = Map(defaultConfig).merge(config);
 
     const existing: ?CharacterMetadata = pool.get(configMap);
+
     if (existing) {
       return existing;
     }
 
     const newCharacter = new CharacterMetadata(configMap);
+
     pool = pool.set(configMap, newCharacter);
+
     return newCharacter;
   }
 
@@ -118,6 +124,14 @@ class CharacterMetadata extends CharacterMetadataRecord {
       style: Array.isArray(style) ? OrderedSet(style) : style,
       entity: Array.isArray(entity) ? OrderedSet(entity) : entity,
     });
+  }
+
+  /**
+   * Clears the character metadata pool.
+   * This is useful when you want to reset the pool to its initial state.
+   */
+  static clearCharacterMetadataPool() {
+    pool = Map([[Map(defaultRecord), EMPTY]]);
   }
 }
 
