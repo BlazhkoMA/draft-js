@@ -32,6 +32,7 @@ const paths = {
   lib: 'lib',
   src: [
     'src/**/*.js',
+    'src/**/*.d.ts',
     '!src/**/__tests__/**/*.js',
     '!src/**/__mocks__/**/*.js',
   ],
@@ -259,7 +260,12 @@ exports.build = gulp.series(
   exports.flow,
   exports.css,
   exports.dist,
-  exports.dist_min
+  exports.dist_min,
+  function copyTypes() {
+    return gulp
+      .src('src/**/*.d.ts')
+      .pipe(gulp.dest(paths.lib));
+  }
 );
 
 // Default task

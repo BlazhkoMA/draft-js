@@ -1,8 +1,8 @@
 {
   "name": "@blazhkoma/draft-js",
   "description": "A React framework for building text editors (fork)",
-  "version": "0.11.7-fork.2",
-  "types": "node_modules/@types/draft-js/index.d.ts",
+  "version": "0.11.7-fork.3",
+  "types": "types.d.ts",
   "keywords": [
     "draftjs",
     "editor",
@@ -38,7 +38,6 @@
     "test-ci": "cross-env NODE_ENV=test npm run lint && npm run flow && npm run test"
   },
   "dependencies": {
-    "@types/draft-js": "^0.11.18",
     "fbjs": "^3.0.4",
     "immutable": "~3.7.4",
     "object-assign": "^4.1.1"
