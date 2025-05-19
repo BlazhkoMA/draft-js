@@ -48,4 +48,10 @@ declare module '@blazhkoma/draft-js' {
       text: string
     ): ContentState;
   }
+
+  class CharacterMetadata {
+    static clearCharacterMetadataPool(): void;
+  }
+
+  export function cleanup(): void;
 } 

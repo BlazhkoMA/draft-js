@@ -28,6 +28,7 @@ const KeyBindingUtil = require('KeyBindingUtil');
 const RawDraftContentState = require('RawDraftContentState');
 const RichTextEditorUtil = require('RichTextEditorUtil');
 const SelectionState = require('SelectionState');
+const cleanup = require('cleanup');
 
 const convertFromDraftStateToRaw = require('convertFromDraftStateToRaw');
 const convertFromHTML = require('convertFromHTMLToContentBlocks');
@@ -70,6 +71,7 @@ const DraftPublic = {
   getDefaultKeyBinding,
   getVisibleSelectionRect,
   clearGenerateRandomKeySeenKeys,
+  cleanup,
 };
 
 module.exports = DraftPublic;
