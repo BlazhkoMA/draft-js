@@ -13,6 +13,7 @@
 
 const CharacterMetadata = require('CharacterMetadata');
 const DraftEntity = require('DraftEntity');
+const Immutable = require('immutable');
 
 /**
  * Cleans up all internal caches in draft-js.
@@ -20,7 +21,7 @@ const DraftEntity = require('DraftEntity');
  */
 function cleanup() {
   CharacterMetadata.clearCharacterMetadataPool();
-  DraftEntity.resetInstanceCount();
+  DraftEntity.__loadWithEntities(Immutable.OrderedMap());
 }
 
 module.exports = cleanup;
