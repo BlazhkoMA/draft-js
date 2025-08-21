@@ -5,6 +5,8 @@ import { OrderedSet, Record, List, Map } from 'immutable';
 
 export interface DraftInlineStyle extends OrderedSet<string> {}
 
+export type DraftInlineStyleType = 'BOLD' | 'ITALIC' | 'UNDERLINE' | 'STRIKETHROUGH' | 'CODE';
+
 export interface DraftBlockType {
     'header-one': string;
     'header-two': string;

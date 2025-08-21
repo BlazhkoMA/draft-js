@@ -15,6 +15,7 @@ import {
   getVisibleSelectionRect,
   cleanup,
   clearGenerateRandomKeySeenKeys,
+  DraftInlineStyleType,
 } from './index';
 
 import * as React from 'react';
@@ -36,6 +37,10 @@ React.createElement(Editor, editorProps);
 
 // Test CharacterMetadata
 CharacterMetadata.clearCharacterMetadataPool();
+
+// Test DraftInlineStyleType
+const boldStyle: DraftInlineStyleType = 'BOLD';
+const italicStyle: DraftInlineStyleType = 'ITALIC';
 
 // Test cleanup functions
 cleanup();
