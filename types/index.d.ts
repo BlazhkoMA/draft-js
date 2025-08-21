@@ -1257,3 +1257,5 @@ export {
 
 export function cleanup(): void;
 export function clearGenerateRandomKeySeenKeys(): void;
+
+export type DraftInlineStyleType = 'BOLD' | 'CODE' | 'ITALIC' | 'STRIKETHROUGH' | 'UNDERLINE';
