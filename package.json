@@ -1,7 +1,7 @@
 {
   "name": "@blazhkoma/draft-js",
   "description": "A React framework for building text editors (fork)",
-  "version": "0.11.8",
+  "version": "0.11.9",
   "types": "types/index.d.ts",
   "keywords": [
     "draftjs",
