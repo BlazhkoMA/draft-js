@@ -2,20 +2,8 @@ import {
   Editor,
   EditorState,
   ContentState,
-  ContentBlock,
-  CharacterMetadata,
-  SelectionState,
-  CompositeDraftDecorator,
-  RichUtils,
-  Modifier,
-  AtomicBlockUtils,
-  convertFromRaw,
-  convertToRaw,
-  getDefaultKeyBinding,
-  getVisibleSelectionRect,
   cleanup,
   clearGenerateRandomKeySeenKeys,
-  DraftInlineStyleType,
 } from './index';
 
 import * as React from 'react';
@@ -34,13 +22,6 @@ const editorProps = {
 };
 
 React.createElement(Editor, editorProps);
-
-// Test CharacterMetadata
-CharacterMetadata.clearCharacterMetadataPool();
-
-// Test DraftInlineStyleType
-const boldStyle: DraftInlineStyleType = 'BOLD';
-const italicStyle: DraftInlineStyleType = 'ITALIC';
 
 // Test cleanup functions
 cleanup();
